@@ -206,3 +206,5 @@ int main(){
 ```
 
 ## Conclusions / Screenshots / Results
+
+In this laboratory work I studied the SOLID principles and why they are so important. By producing code and testing it, I have understood this topic even more. This topic is difficult, especially because examples on the internet do not show how this all the SOLID principles should look like altogether, and there are some examples that even though respect some of the rules, they violate others. SOLID principles should be used with care, you can still write bad code with it, like my first try.
