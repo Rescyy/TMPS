@@ -2,19 +2,19 @@
 
 class Device{
     protected:
-        ProgramInterface prg;
+        ProgramInterface *prg;
     public:
         void perform_program(){
-            prg.execute();
+            prg->execute();
         }
 };
 
 class Computer : public Device{
     public:
-        Computer(ProgramInterface program){
+        Computer(ProgramInterface *program){
             prg = program;
         }
-        void install_software(ProgramInterface program){
+        void install_software(ProgramInterface *program){
             prg = program;
         }
 };
@@ -27,7 +27,7 @@ class PhoneInterface{
 
 class Phone : public Device, public PhoneInterface{
     public:
-        Phone(ProgramInterface program){
+        Phone(ProgramInterface *program){
             prg = program;
         }
         void call_grandma(){

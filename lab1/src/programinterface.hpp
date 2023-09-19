@@ -3,20 +3,14 @@ using namespace std;
 
 class ProgramInterface{
     public:
-        void execute(){
-            std::cout << "Code executed succesfully";
-        };
+        virtual void execute() = 0;
 };
 
 class AddingProgram : public ProgramInterface{
     private:
-        std::string intro;
-        std::string outro;
+        std::string intro = "Adding Program\nPlease Input 2 Integers\n";
+        std::string outro = "Your result is:\n";
     public:
-        AddingProgram(string _intro, string _outro){
-            intro = _intro;
-            outro = _outro;
-        };
         void execute(){
             int a, b;
             cout << intro;
