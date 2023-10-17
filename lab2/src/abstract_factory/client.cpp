@@ -1,9 +1,9 @@
 #include "abstract_factory.hpp"
 
 int main(){
-    GamingDeviceFactory gamingDevFactory;
-    GamingPhone *gamingphone = gamingDevFactory.getPhone();
-    GamingDesktopComputer *gamingcomputer = gamingDevFactory.getDesktopComputer();
-    GamingLaptop *gaminglaptop = gamingDevFactory.getLaptop();
+    DeviceFactory *gamingDevFactory = new WorkDeviceFactory();
+    Phone *gamingphone = gamingDevFactory->getPhone();
+    // GamingDesktopComputer *gamingcomputer = (GamingDesktopComputer *) gamingDevFactory->getDesktopComputer();
+    // GamingLaptop *gaminglaptop = (GamingLaptop *) gamingDevFactory->getLaptop();
     return 0;
 }

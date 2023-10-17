@@ -1,14 +1,14 @@
 #include "builder.hpp"
 
 int main(){
-    PCBuilder pcbuilder;
+    PCBuilder *pcbuilder = new PCBuilder();
     PCBuilderDirector director;
-    director.buildAtari(&pcbuilder);
-    PC atari = pcbuilder.getPC();
-    director.buildGamingPC(&pcbuilder);
-    PC gamingpc = pcbuilder.getPC();
-    director.buildWorkPC(&pcbuilder);
-    PC workpc = pcbuilder.getPC();
+    director.buildAtari(pcbuilder);
+    PC atari = pcbuilder->getPC();
+    director.buildGamingPC(pcbuilder);
+    PC gamingpc = pcbuilder->getPC();
+    director.buildWorkPC(pcbuilder);
+    PC workpc = pcbuilder->getPC();
     atari.inspect();
     gamingpc.inspect();
     workpc.inspect();

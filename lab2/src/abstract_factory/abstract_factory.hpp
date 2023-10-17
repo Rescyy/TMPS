@@ -108,9 +108,9 @@ class WorkLaptop : public Laptop{
 
 class DeviceFactory{
     public:
-        DesktopComputer *getDesktopComputer();
-        Laptop *getLaptop();
-        Phone *getPhone();
+        virtual DesktopComputer *getDesktopComputer() = 0;
+        virtual Laptop *getLaptop() = 0;
+        virtual Phone *getPhone() = 0;
 };
 
 class GamingDeviceFactory : public DeviceFactory{
@@ -122,6 +122,7 @@ class GamingDeviceFactory : public DeviceFactory{
             return new GamingLaptop();
         };
         GamingPhone *getPhone(){
+            cout << "Gaming phone\n";
             return new GamingPhone();
         };
 };
@@ -135,6 +136,7 @@ class WorkDeviceFactory : public DeviceFactory{
             return new WorkLaptop();
         }
         WorkPhone *getPhone(){
+            cout << "work phone";
             return new WorkPhone();
         }
 };
