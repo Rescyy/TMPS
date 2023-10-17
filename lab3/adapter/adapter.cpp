@@ -37,7 +37,7 @@ class VirtualEmulator : public Windows {
             int virtual_machine = 0x10;
             std::string game_content = "";
             char *android_game = mobile_->RunAndroidGame();
-            for(int i = 0; i < *android_game; i++){
+            for(int i = 0; i < *android_game - 1; i++){
                 game_content += (char) (android_game[i+1] + virtual_machine);
             }
             delete android_game;
